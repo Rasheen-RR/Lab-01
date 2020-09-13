@@ -26,6 +26,11 @@ public class StudentGrade {
             try {
 
                 grade = sc.nextInt();
+
+                if (grade < 0 || grade > 100)  {
+                    throw new Exception();
+                }
+
                 System.out.println(String.format("Student Name: %s , Student Grade: %s%% , The letter grade for %s%% is %s",
                         name,grade,grade,checkGrade(grade)));
 
@@ -47,7 +52,7 @@ public class StudentGrade {
                     sc.close();
                     return;
                 }
-            }catch (InputMismatchException ex){
+            }catch (Exception ex){
                 System.out.println("Please enter a valid student grade:");
                 // Set restart to false so that the name won't be promted again
                 restart = false;
