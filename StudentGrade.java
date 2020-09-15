@@ -6,7 +6,7 @@ public class StudentGrade {
      public static void main(String[] args) {
 
         String name = "";
-        int grade = 0;
+        double grade = 0;
         String userSelection = "";
         boolean restart = true;
 
@@ -25,7 +25,7 @@ public class StudentGrade {
 
             try {
 
-                grade = sc.nextInt();
+                grade = sc.nextDouble();
 
                 if (grade < 0 || grade > 100)  {
                     throw new Exception();
@@ -67,7 +67,7 @@ public class StudentGrade {
 
     // Method to check grades
     // static used as non static methods cannot be referenced in the main method which is  static 
-    public static String checkGrade(int grade){
+    public static String checkGrade(double grade){
 
         String gradeString = "F";
 
